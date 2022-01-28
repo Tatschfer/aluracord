@@ -19,19 +19,6 @@ function Titulo(props) {
   );
 }
 
-// Componente React
-// function HomePage() {
-//     // JSX
-//     return (
-//         <div>
-//             <GlobalStyle />
-//             <Titulo tag="h2">Boas vindas de volta!</Titulo>
-//             <h2>Discord - Alura Matrix</h2>
-//         </div>
-//     )
-// }
-// export default HomePage
-
 export default function PaginaInicial() {
   // const username = 'Tatschfer';
   const [username, setUsername] = React.useState('');
@@ -67,7 +54,6 @@ export default function PaginaInicial() {
             onSubmit={function(infosDoEvento){
               infosDoEvento.preventDefault();
               console.log('alguém submeteu o form')
-              // window.location.href='/chat';
               roteamento.push('/chat')
             }}
             styleSheet={{
