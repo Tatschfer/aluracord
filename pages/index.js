@@ -94,6 +94,7 @@ export default function PaginaInicial() {
                   backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
               }}
+              placeholder='insira seu usuário aqui sem o @'
             />
             <Button
               type='submit'
