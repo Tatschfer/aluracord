@@ -10,7 +10,7 @@ Chat no estilo Discord criado na Imersão React da @alura. @alura-challenges, @o
 - [React](https://pt-br.reactjs.org/)
 - [Next.js](https://nextjs.org/)
 - [Node.js](https://nodejs.org/en/)
-- [Supabase](https://supabase.com/)
+- [Supabase](https://supabase.com/) *utilizada apenas o database, não há autenticação no chat
 - [SkynexUI](https://storybook.skynexui.dev/?path=/story/introduction--page)
 ## Screenshots
 
