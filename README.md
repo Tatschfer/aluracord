@@ -4,7 +4,7 @@
 Chat no estilo Discord criado na Imersão React da @alura. @alura-challenges, @omariosouto e @peas.
 
 #### Link:
-[Acesse aqui!]("https://aluracord-fer.netlify.app/")
+[Acesse aqui!](https://aluracord-fer.netlify.app/)
 ## Tecnologias
 
 - [React](https://pt-br.reactjs.org/)
