@@ -20,7 +20,6 @@ function Titulo(props) {
 }
 
 export default function PaginaInicial() {
-  // const username = 'Tatschfer';
   const [username, setUsername] = React.useState('');
   const roteamento = useRouter();
 
@@ -48,13 +47,14 @@ export default function PaginaInicial() {
             backgroundColor: appConfig.theme.colors.neutrals[700],
           }}
         >
+          
           {/* Formulário */}
           <Box
             as="form"
             onSubmit={function(infosDoEvento){
               infosDoEvento.preventDefault();
               console.log('alguém submeteu o form')
-              roteamento.push('/chat')
+              roteamento.push(`/chat?username=${username}`)
             }}
             styleSheet={{
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
@@ -66,16 +66,6 @@ export default function PaginaInicial() {
               {appConfig.name}
             </Text>
 
-            {/* <input type="text"
-            value={username}
-            onChange={function (event){
-              console.log('usuario digitou', event.target.value);
-              //onde tá o valor?
-              const valor = event.target.value;
-              //trocar o valor da variavel através do react e avise quem precisa
-              setUsername(valor);
-            }}
-            /> */}
             <TextField
             value={username}
             onChange={function (event){
@@ -94,8 +84,22 @@ export default function PaginaInicial() {
                   backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
               }}
-              placeholder='insira seu usuário aqui sem o @'
+              placeholder='insira seu usuário do github aqui sem o @'
             />
+
+            {`${username}` === ('') ? 
+            <Button 
+            type='submit'
+            label='Entrar'
+            fullWidth
+            buttonColors={{
+              contrastColor: appConfig.theme.colors.neutrals["000"],
+              mainColor: appConfig.theme.colors.primary[500],
+              mainColorLight: appConfig.theme.colors.primary[400],
+              mainColorStrong: appConfig.theme.colors.primary[600],
+            }}
+            disabled/> 
+            :
             <Button
               type='submit'
               label='Entrar'
@@ -106,7 +110,8 @@ export default function PaginaInicial() {
                 mainColorLight: appConfig.theme.colors.primary[400],
                 mainColorStrong: appConfig.theme.colors.primary[600],
               }}
-            />
+              />
+            }
           </Box>
           {/* Formulário */}
 
@@ -127,27 +132,41 @@ export default function PaginaInicial() {
               minHeight: '240px',
             }}
           >
-            <Image
-              styleSheet={{
-                borderRadius: '50%',
-                marginBottom: '16px',
-              }}
-              src={`https://github.com/${username}.png`}
-            />
+            {`${username}` === ('') 
+            ? <Image src={'https://github.com/github.png'} styleSheet={{borderRadius:'15px'}}/> 
+            : <Image src={`https://github.com/${username}.png`} styleSheet={{borderRadius:'15px'}} />}
+
+            {`${username}` === ('') ? null : 
             <Text
               variant="body4"
               styleSheet={{
                 color: appConfig.theme.colors.primary[500],
                 backgroundColor: appConfig.theme.colors.neutrals[100],
                 padding: '3px 10px',
-                borderRadius: '1000px'
+                borderRadius: '1000px',
+                marginTop: '20px'
               }}
             >
               {username}
             </Text>
+            }
+           
           </Box>
           {/* Photo Area */}
         </Box>
+        <Text 
+        styleSheet={{
+          color: '#fff',
+          fontSize: '12px',
+          backgroundColor: appConfig.theme.colors.primary[500],
+          padding: '3px',
+          width: '100%',
+          position: 'absolute',
+          top: '90%',
+          textAlign: 'center'
+        }}        
+        >Copyrights: Projeto base: Alura | Redesign e novas funcionalidades: Fernanda Tatsch | <a style={{textDecoration:'none', color: '#fff'}} href='http://phpography.com'>Background: phpography.com </a> | <a style={{textDecoration:'none', color: '#fff' }} href='https://github.com/github.png?size=40'>Avatar: GitHub</a>
+        </Text>
       </Box>
     </>
   );

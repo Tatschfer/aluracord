@@ -24,6 +24,7 @@ function GlobalStyle() {
         }
         /* ./App fit Height */
       `}</style>
+      
     );
   }
 
@@ -36,5 +37,6 @@ export default function CustomApp({ Component, pageProps }) {
     </>
     );
   }
+  
 
   //NEXTJS == Esse arquivo é um wrapper, carrega em todas as páginas. Quando insere uma lib para usar na aplicação inteira, //se utiliza neste arquivo
